@@ -1,0 +1,7 @@
+C:\Users\yohan\Desktop\PERSONAL\Tareas\Electiva1\pubdw.bi\pubdw.Model\bin\Debug\pubdw.Model.dll.config
+C:\Users\yohan\Desktop\PERSONAL\Tareas\Electiva1\pubdw.bi\pubdw.Model\bin\Debug\pubdw.Model.dll
+C:\Users\yohan\Desktop\PERSONAL\Tareas\Electiva1\pubdw.bi\pubdw.Model\bin\Debug\pubdw.Model.pdb
+C:\Users\yohan\Desktop\PERSONAL\Tareas\Electiva1\pubdw.bi\pubdw.Model\obj\Debug\pubdw.Model.csproj.AssemblyReference.cache
+C:\Users\yohan\Desktop\PERSONAL\Tareas\Electiva1\pubdw.bi\pubdw.Model\obj\Debug\pubdw.Model.csproj.CoreCompileInputs.cache
+C:\Users\yohan\Desktop\PERSONAL\Tareas\Electiva1\pubdw.bi\pubdw.Model\obj\Debug\pubdw.Model.dll
+C:\Users\yohan\Desktop\PERSONAL\Tareas\Electiva1\pubdw.bi\pubdw.Model\obj\Debug\pubdw.Model.pdb

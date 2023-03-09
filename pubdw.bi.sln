@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "pubdw.bi", "pubdw.bi\pubdw.bi.dtproj", "{9B5E2E5D-79E7-4C99-9C31-8EF10CBC14ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pubdw.Model", "pubdw.Model\pubdw.Model.csproj", "{7A0E7860-565E-4F06-98A4-9005579EDF72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B5E2E5D-79E7-4C99-9C31-8EF10CBC14ED}.Debug|Any CPU.ActiveCfg = Development
+		{9B5E2E5D-79E7-4C99-9C31-8EF10CBC14ED}.Debug|Any CPU.Build.0 = Development
+		{9B5E2E5D-79E7-4C99-9C31-8EF10CBC14ED}.Development|Any CPU.ActiveCfg = Development
+		{9B5E2E5D-79E7-4C99-9C31-8EF10CBC14ED}.Development|Any CPU.Build.0 = Development
+		{9B5E2E5D-79E7-4C99-9C31-8EF10CBC14ED}.Release|Any CPU.ActiveCfg = Development
+		{9B5E2E5D-79E7-4C99-9C31-8EF10CBC14ED}.Release|Any CPU.Build.0 = Development
+		{7A0E7860-565E-4F06-98A4-9005579EDF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0E7860-565E-4F06-98A4-9005579EDF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A0E7860-565E-4F06-98A4-9005579EDF72}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0E7860-565E-4F06-98A4-9005579EDF72}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{7A0E7860-565E-4F06-98A4-9005579EDF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A0E7860-565E-4F06-98A4-9005579EDF72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF6FE92A-64F9-42D9-8CC1-F04FC16D2E0C}
+	EndGlobalSection
+EndGlobal

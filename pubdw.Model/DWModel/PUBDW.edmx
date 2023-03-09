@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="PUBDW.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="PUBDWTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PUBDW" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="PUBDWContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DimStores" EntityType="PUBDW.DimStores" />
+          <EntitySet Name="DimTitles" EntityType="PUBDW.DimTitles" />
+          <EntitySet Name="DimPublishers" EntityType="PUBDW.DimPublishers" />
+          <EntitySet Name="DimDates" EntityType="PUBDW.DimDates" />
+          <AssociationSet Name="DimDatesDimTitles" Association="PUBDW.DimDatesDimTitles">
+            <End Role="DimDates" EntitySet="DimDates" />
+            <End Role="DimTitles" EntitySet="DimTitles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DimStores">
+          <Key>
+            <PropertyRef Name="StoreKey" />
+          </Key>
+          <Property Name="StoreKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="String" Nullable="false" Unicode="true" MaxLength="4" />
+          <Property Name="StoreName" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DimTitles" Abstract="false">
+          <Key>
+            <PropertyRef Name="TitleKey" />
+          </Key>
+          <Property Name="TitleKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleId" Type="String" Nullable="false" MaxLength="6" Unicode="true" />
+          <Property Name="TitleName" Type="String" Nullable="false" Unicode="true" MaxLength="100" />
+          <Property Name="TitleType" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
+          <Property Name="PublisherKey" Type="Int32" Nullable="false" />
+          <Property Name="TitlePrice" Type="Decimal" Nullable="false" Scale="18" Precision="4" />
+          <NavigationProperty Name="DimDates" Relationship="PUBDW.DimDatesDimTitles" FromRole="DimTitles" ToRole="DimDates" />
+          <Property Name="PublishedDateKey" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DimPublishers">
+          <Key>
+            <PropertyRef Name="PublisherKey" />
+          </Key>
+          <Property Name="PublisherKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublisherId" Type="String" Nullable="false" MaxLength="4" Unicode="true" />
+          <Property Name="PublisherName" Type="String" Nullable="false" Unicode="true" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DimDates">
+          <Key>
+            <PropertyRef Name="DateKey" />
+          </Key>
+          <Property Name="DateKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="DateName" Type="String" Nullable="false" Unicode="true" MaxLength="50" />
+          <Property Name="Month" Type="Int32" Nullable="false" />
+          <Property Name="MonthName" Type="String" Nullable="false" Unicode="true" MaxLength="50" />
+          <Property Name="Quarter" Type="Int32" Nullable="false" />
+          <Property Name="QuarterName" Type="String" Nullable="false" Unicode="true" MaxLength="50" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="YearName" Type="String" Nullable="false" Unicode="true" MaxLength="50" />
+          <NavigationProperty Name="DimTitles" Relationship="PUBDW.DimDatesDimTitles" FromRole="DimDates" ToRole="DimTitles" />
+        </EntityType>
+        <Association Name="DimDatesDimTitles">
+          <End Type="PUBDW.DimDates" Role="DimDates" Multiplicity="1" />
+          <End Type="PUBDW.DimTitles" Role="DimTitles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DimDates">
+              <PropertyRef Name="DateKey" />
+            </Principal>
+            <Dependent Role="DimTitles">
+              <PropertyRef Name="PublishedDateKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="PUBDW" />
+        <Alias Key="Target" Value="PUBDW.Store" />
+        <EntityContainerMapping CdmEntityContainer="PUBDWContainer" StorageEntityContainer="PUBDWTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
